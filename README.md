@@ -158,3 +158,10 @@ At this stage, to use `Lldo.jl`, load it directly from the `src` directory when 
    include("../../src/Lldo.jl") 
    using .Lldo
 ```
+
+To run an example from the terminal:
+
+```bash
+  cd path/to/Lldo.jl
+  julia --project=. demo/examples/mpvcc1.jl
+```
