@@ -16,13 +16,13 @@ $$
    & \ f(x) \\
 \text{subject to}                
    & \ A(x) \in C \\
-   & \ F_j(x) \in \bigcup_{i=1}^{p_j} D_{ji} \quad \text{for}\quad j \in \{1,\ldots,r\}
+   & \ F^{j}(x) \in \bigcup_{i=1}^{c_j} D^{j}_{i} \quad \text{for}\quad j \in \{1,\ldots,r\}
 \end{align}
 $$
 
 where:
-- $f: \mathbb{R}^n \to \mathbb{R}$, $A: \mathbb{R}^n \to \mathbb{R}^m$ and $F_j: \mathbb{R}^n \to \mathbb{R}^{p_j}$ ($p_j\geq2$) are smooth;
-- $C\subset\mathbb{R}^m$ and $D_{ji}\subset\mathbb{R}^{p_j}$ are closed, convex sets.
+- $f: \mathbb{R}^n \to \mathbb{R}$, $A: \mathbb{R}^n \to \mathbb{R}^m$ and $F^{j}: \mathbb{R}^n \to \mathbb{R}^{p_j}$ are smooth;
+- $C\subset\mathbb{R}^m$ and $D^{j}_{i}\subset\mathbb{R}^{p_j}$ are closed, convex sets.
 
 ## Lasry-Lions Double Envelopes
 
