@@ -724,7 +724,7 @@ function class_alm(
     w = [zeros(length(yi)) for yi in y0[1:end-1]]
 
     norm_cons_vio = nothing
-    V_old = nothing
+    V_old = Inf
     V = nothing
     tot_interim_compl = Vector{Vector{Vector{Float64}}}()
 
@@ -780,7 +780,6 @@ function class_alm(
         w .= w_opt
         f_outer, _ = f(x)
         norm_cons_vio = maximum(cons_vio)
-        V_old = V
         push!(tot_interim_compl, interim_compl)
 
         # print interim results
@@ -806,6 +805,8 @@ function class_alm(
             ε = max(opt.κ_ε * ε, opt.tol_dual)
 
         end
+
+        V_old = V
 
     end
 

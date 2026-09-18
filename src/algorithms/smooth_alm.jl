@@ -626,7 +626,7 @@ function smooth_alm(
     ε = opt.ε0
     
     norm_cons_vio = nothing
-    V_old = nothing
+    V_old = Inf
     V = nothing
     tot_interim_compl = Vector{Vector{Vector{Float64}}}()
     catch_M_indices = nothing
@@ -680,7 +680,6 @@ function smooth_alm(
         x .= inner_result.x_opt
         f_outer, _ = f(x)
         norm_cons_vio = maximum(cons_vio)
-        V_old = V
         push!(tot_interim_compl, interim_compl)
         catch_M_indices = M_indices
 
@@ -714,7 +713,9 @@ function smooth_alm(
             ε = max(opt.κ_ε * ε, opt.tol_dual)
         end
 
+        V_old = V
         μ = λ[1:end-1] .* β
+        
     end
 
     elapsed_time = time() - start_time
