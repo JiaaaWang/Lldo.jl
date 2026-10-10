@@ -747,7 +747,7 @@ println("=======================================================================
         "Time", "Objective", "Outer iter", "Inner iter", "Status", "Tolerance", "λ for A(x)∈C", "λ for F(x)∈D", "β", "Max violation")
     println("-----------------------------------------------------------------------------------------------------------------------------------------------------")
     @printf("%-12s %-15s %-12d %-12d %-18s %-15s %-15s %-15s %-12s %-15s\n",
-        "$(round(elapsed_time, digits=2))s", 
+        "$(@sprintf("%.2e", elapsed_time))s",
         "$(@sprintf "%.2e" f_opt)", 
         tot_it, 
         tot_inner_it, 

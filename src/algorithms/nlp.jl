@@ -254,7 +254,7 @@ println("=======================================================================
         "Time", "Objective", "Status", "Tolerance", "Max violation", "Infea measure")
     println("----------------------------------------------------------------------------------------------")
     @printf("%-12s %-15s %-18s %-15s %-15s %-15s\n",
-        "$(round(algencan_elapsed_time, digits=2))s", 
+        "$(@sprintf("%.2e", algencan_elapsed_time))s",
         "$(@sprintf "%.2e" f_opt)", 
         "$algencan_status",
         "$(@sprintf "%.2e" tol_dual)",

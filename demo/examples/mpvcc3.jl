@@ -157,3 +157,17 @@ result_smooth_alm = smooth_alm(
     r;
     options = opt_smooth_alm
 )
+
+# Algencan
+result_algencan = direct_algencan(
+    f,
+    F,
+    A,
+    C,
+    x0,
+    m, 
+    r; 
+    tol_prim = tol,
+    tol_dual = tol,
+    prob_type = prob_type
+)
