@@ -44,6 +44,18 @@ where:
   <img src="docs/images/vc.png" width="700">
 </p>
 
+- Relaxed reformulated cardinality constraint and its double envelope:
+
+<p align="center">
+  <img src="docs/images/rcc.png" width="700">
+</p>
+
+- Integer constraint and its double envelope:
+
+<p align="center">
+  <img src="docs/images/int.png" width="700">
+</p>
+
 ## Constraints
 
 - ✅ The set $C$ encodes the inequality and equality constraints:
@@ -55,12 +67,12 @@ $$
 - ✅ Vertical complementarity constraints:
 
 $$
-D_{ji} = \mathbb{R}_+^{i-1} \times \lbrace 0 \rbrace \times \mathbb{R}_+^{p_j-i}
+D_{i}^{j} = \mathbb{R}_+^{i-1} \times \lbrace 0 \rbrace \times \mathbb{R}_+^{p_j-i}
 $$
 
   when $p_j = 2$, this recovers the standard complementarity constraints.
 
-- ⏳ Switching, vanishing, cardinality, chance and integer constraints.
+- ⏳ Switching, vanishing, cardinality, and integer constraints.
 
 ## Data Structures
 
@@ -86,7 +98,7 @@ $$
   - `obj_value` is a numerical scalar,
   - `grad_value` is a numerical vector.
 
-- `VectorFunction`: models the constraint mappings $A(x)$ and $F_j(x)$.
+- `VectorFunction`: models the constraint mappings $A(x)$ and $F^j(x)$.
 
   ```julia
    A = VectorFunction(:constraint, A_func, A_jaco)
